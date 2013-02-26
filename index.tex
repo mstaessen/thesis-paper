@@ -1,28 +1,97 @@
-\documentclass[a4paper, conference]{IEEEconf}
+\documentclass[a4paper,conference]{IEEEconf}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[style=ieee]{biblatex}
+\addbibresource{references.bib}
+\usepackage{url}
+
+\newcommand{\anotherFramework}{\textcolor{red}{another framework}}
+\newcommand{\TODO}{\textcolor{red}{TODO}}
 
 \begin{document}
-\title{A comparative study of tools for cross-platform mobile application development}
-\author{Michiel Staessen \\
+\title{Een vergelijkende studie van cross-platform tools voor het ontwikkelen van mobiele applicaties}
+\author{
+    Michiel~Staessen \\
     \begin{affiliation}
-       Computer Science Department\\
-       University of Leuven\\
+       Departement computerwetenschappen\\
+       KU~Leuven\\
     \end{affiliation} \\
-\email{michiel.staessen@student.kuleuven.be}
+    \email{michiel.staessen@student.kuleuven.be}
 }
 \maketitle
 
-\section{Introduction}
+\begin{abstract}
+% Abstract should be 150 words or less.
+Het ontwikkelen van mobiele applicaties voor meerdere platformen is een tijdrovende en dure bezigheid. Omwille van deze reden zoeken meer en meer bedrijven hun toevlucht in Cross-Platform Tools (CPT's) voor het ontwikkelen van mobiele applicaties (apps). In opdracht van CapGemini maakt dit artikel een nauwkeurige vergelijking van twee dergelijke tools: Apache Cordova en \anotherFramework. De beschouwde platformen zijn Android en iOS.
+\end{abstract}
 
-\section{Architectures to the rescue}
+\section{Inleiding}
 
-\section{Methodology}
+Smartphones zijn razend populair. De verkoop van ervan is op zijn minst indrukwekkend. Sinds 2009 hebben fabrikanten van dergelijke toestellen een samengestelde jaarlijkse groei van 57,61\% weten te realiseren, uitgaande van wereldwijd marktonderzoek door Gartner. Deze groei wordt voornamelijk aangedreven door goedkope Android toestellen, die de plaats innemen van de traditionele GSM. 
 
-\section{Comparison}
+Ook op de markt van tablets speelt zich een soortgelijk scenario af. Volgens een schatting van IDC, zullen tablet fabrikanten tussen 2012 en 2016 wereldwijd een samengestelde jaarlijkse groei van 23,3\% realiseren \cite{IDC:201205}.
 
-\subsection{Cordova}
+De huidige smartphonemarkt wordt gedomineerd door het Apple/Google duopolie. Van de 700 miljoen verkochte smartphones was 85\% een Android toestel of iPhone. Door netwerkeffecten is het erg moeilijk voor andere platformen om marktaandeel te verkrijgen. Desalniettemin blijven ontwikkelaars naar alternatieven zoeken omdat ze als de dood zijn voor vendor lock-in. \cite{VM_DE:2013}
+
+Cross-Platform Tools (CPT's) laten ontwikkelaars toe om applicaties te ontwikkelen voor meerdere platformen tegelijk, vertrekkende van een (quasi) identieke codebase. CPT's verlagen daarom zowel toetredings- als uittredingsdrempels (``lock-in''). Door een CPT te gebruiken, krijgt de ontwikkelaar eenvoudig toegang tot nieuwe platformen en kan de ontwikkelaar gemakkelijker naar een ander platform migreren. \cite{VM_CPT:2012}
+
+CPT's ambiëren een oplossing voor drie problemen. Vanzelfsprekend helpen CPT's bij het overwinnen van platform fragmentatie. Het fragmentatieprobleem krijgt echter voortdurend nieuwe dimensies. Naast platform fragmentatie bestaat er ook runtime fragmentatie, schermgrootte fragmentatie, processorfragmentatie, \ldots 
+
+Daarnaast vereenvoudigen CPT's ook de toegang tot nieuwe platformen en schermen. Hoewel op dit ogenblik CPT's voornamelijk gebruikt worden voor het ontwikkelen van smartphone en tablet apps, kunnen CPT's ook gebruikt worden voor het ontwikkelen van applicaties voor desktops, TV's en andere media.
+
+Tot slot kan het gebruik van CPT's leiden tot een efficiënter beheer van ontwikkelingsmiddelen. Een applicatie voor meerdere platformen ontwikkelen impliceert dat (vaak verschillende) teams meerdere codebases en functionaliteiten moeten synchroniseren over de verschillende platformen. Dit is een tijdrovende en dure bezigheid.
+
+\section{Software architecturen}
+
+Tot op heden zijn er vier architecturen gekend die cross-platform ontwikkeling mogelijk maken: Web apps, hybrid apps, interpreted apps en cross-compiled apps.
+
+\subsection{Native apps}
+
+De native architectuur ondersteunt geen cross-platform ontwikkeling maar wordt volledigheidshalve toch opgenomen omdat dit de de facto standaard is bij het ontwikkelen van mobiele applicaties.
+
+\TODO
+
+Native apps worden ontwikkeld met de SDK die door de platform ontwikkelaar worden meegeleverd. 
+
+\subsection{Web apps}
+
+Web apps zijn mobiele websites. Elk platform beschikt over een browser en er wordt wel eens gezegd dat de browser native is op elk platform. 
+
+\TODO
+
+\subsection{Hybrid apps}
+
+Hybrid apps combineren het beste van twee werelden. Het zijn HTML5 applicaties die verpakt worden in native omhulsel. Dat omhulsel bevat alle functionaliteit die niet aangereikt wordt door browser. De communicatie tussen applicatie en omhulsel verloopt via een JavaScript bridge. Op deze manier kunnen hybrid apps het volledige potentieel van het mobiele apparaat benutten.
+
+\TODO
+
+Cross-Platform Tools die dit patroon volgen zijn onder meer Apache Cordova, Sencha Cmd, Trigger.io, Kony, \ldots
+
+\subsection{Interpreted apps}
+
+Interpreted apps maken gebruik van een tussenliggende taal en vertalen deze in platformcode at runtime. Het is vergelijkbaar met de Java VM die Java bytecode omzet in machinecode. Dit wil ook zeggen dat deze  
+
+Cross-Platform Tools die deze architectuur omarmen zijn onder andere Appcelerator Titanium, Rhodes, \ldots
+
+\subsection{Cross-compiled apps}
+
+Cross-compiled apps kunnen tijdens het compileren meteen vertaald worden naar platform specifieke code en maken geen gebruik van een tussenliggende taal. Het resultaat is native app die
+
+Een Cross-Platform Tool die dit schema aanbiedt, is Xamarin.
+
+\section{Vergelijkingscriteria}
+
+\section{Vergelijking}
+
+\subsection{Apache Cordova}
 
 \subsection{Rhodes}
 
-\section{Conclusion}
+\section{Besluit}
 
+\printbibliography
 \end{document}
