@@ -8,6 +8,7 @@
 \usepackage[style=ieee]{biblatex}
 \addbibresource{references.bib}
 \usepackage{url}
+\usepackage{hyperref}
 
 \newcommand{\anotherFramework}{\textcolor{red}{another framework}}
 \newcommand{\TODO}{\textcolor{red}{TODO}}
@@ -45,43 +46,57 @@ Daarnaast vereenvoudigen CPT's ook de toegang tot nieuwe platformen en schermen.
 
 Tot slot kan het gebruik van CPT's leiden tot een efficiënter beheer van ontwikkelingsmiddelen. Een applicatie voor meerdere platformen ontwikkelen impliceert dat (vaak verschillende) teams meerdere codebases en functionaliteiten moeten synchroniseren over de verschillende platformen. Dit is een tijdrovende en dure bezigheid.
 
-\section{Software architecturen}
+\section{Verschillende werkwijzen}
 
-Tot op heden zijn er vier architecturen gekend die cross-platform ontwikkeling mogelijk maken: Web apps, hybrid apps, interpreted apps en cross-compiled apps.
+Tot op heden zijn er vier werkwijzen gekend die cross-platform ontwikkeling mogelijk maken: Web apps, hybrid apps, interpreted apps en cross-compiled apps \cite{Friese:2012}.
 
 \subsection{Native apps}
 
-De native architectuur ondersteunt geen cross-platform ontwikkeling maar wordt volledigheidshalve toch opgenomen omdat dit de de facto standaard is bij het ontwikkelen van mobiele applicaties.
+Native apps behoren niet tot de werkwijzen voor het cross-platform ontwikkelen van mobiele applicaties. Native apps zijn de de facto standaard voor het ontwikkelen van mobiele applicaties en vormen dus de baseline voor de vergelijking van de werkwijzen. 
 
-\TODO
+Een native apps is het resultaat wanneer een mobiele applicatie ontwikkeld wordt met de SDK die meegeleverd wordt door de ontwikkelaar van het platform. Voor Android worden mobiele native applicaties ontwikkeld met de Android SDK en Java, voor iOS worden deze applicaties ontwikkeld met de iOS SDK en Objective-C.
 
-Native apps worden ontwikkeld met de SDK die door de platform ontwikkelaar worden meegeleverd. 
+Native applicaties kunnen het volledige potentieel van het toestel benutten, hebben de vertrouwde look \& feel en hebben de beste performantie. 
 
-\subsection{Web apps}
+\subsection{Mobile web apps}
 
-Web apps zijn mobiele websites. Elk platform beschikt over een browser en er wordt wel eens gezegd dat de browser native is op elk platform. 
+Mobile web apps zijn mobiele websites. Ze worden geopend in de web browser van het mobiele toestel. Omdat elk platform over een browser beschikt en omdat de HTML-specificatie platform onafhankelijk is, zijn mobiele web apps wellicht de meest eenvoudige manier om voor mobiele platformen te ontwikkelen. Er zijn echter ook nadelen verbonden aan mobiele web apps.
 
-\TODO
+Mobiele web apps worden verspreid met behulp van een URL en kunnen dus niet gevonden worden in app stores. Hoewel de HTML5 specificatie een aantal nuttige device API's heeft, kunnen niet alle functies van het mobiele apparaat gebruikt worden. Bovendien ondersteunen mobiele web browsers niet altijd API's \cite{Firtman:2012}. Als kers op de taart, laat de performantie van de browser ook vaak te wensen over.
+
+Omdat de mobiele web app in de browser draait, kan deze ook geen gebruik maken van native UI elementen en kan deze dus ook geen native look \& feel hebben. Of dit een nadeel is, staat nog ter discussie. Websites voldoen aan de ``one size fits all'' filosofie en hebben als dusdanig een eigen look \& feel \cite{Mahemoff:2011}.
+
+Cross-Platform Tools voor web app ontwikkeling zijn HTML5 frameworks waaronder jQuery Mobile, Sencha Touch, Zepto.js, DHTMLX Touch, \ldots
 
 \subsection{Hybrid apps}
 
-Hybrid apps combineren het beste van twee werelden. Het zijn HTML5 applicaties die verpakt worden in native omhulsel. Dat omhulsel bevat alle functionaliteit die niet aangereikt wordt door browser. De communicatie tussen applicatie en omhulsel verloopt via een JavaScript bridge. Op deze manier kunnen hybrid apps het volledige potentieel van het mobiele apparaat benutten.
+Hybrid apps combineren het beste van twee werelden. Het zijn HTML5 applicaties die verpakt worden in native omhulsel. Dat omhulsel bevat alle functionaliteit die niet aangereikt wordt door browser en de communicatie tussen applicatie en omhulsel verloopt via een JavaScript bridge. Op deze manier kunnen hybrid apps het volledige potentieel van het mobiele apparaat benutten.
 
-\TODO
+Voor de eindgebruiker is er weinig verschil tussen een hybrid app en een native app omdat deze apps via de gewoonlijke kanalen te verkrijgen zijn (app stores). Wat hybrid apps niet kunnen beloven is native Look \& Feel omdat ze doorgaans geen native UI elementen kunnen gebruiken voor de user interface. Een ander probleem met hybrid apps is opnieuw de vaak teleurstellende performantie van de browser. 
+
+Ondanks de nadelen, zijn hybrid apps toch interessant en in het bijzonder voor web ontwikkelaars die de overstap maken naar mobiele applicaties. Zij kunnen op deze manier hun kennis van webtochnologie gebruiken om mobiele applicaties te maken. Omdat de applicatie zelf in HTML geschreven is, laat dit toe om updates te verspreiden zonder tussenkomst van de app store en ondersteunen CPT's voor hybrid apps doorgaans meer platformen.
 
 Cross-Platform Tools die dit patroon volgen zijn onder meer Apache Cordova, Sencha Cmd, Trigger.io, Kony, \ldots
 
 \subsection{Interpreted apps}
 
-Interpreted apps maken gebruik van een tussenliggende taal en vertalen deze in platformcode at runtime. Het is vergelijkbaar met de Java VM die Java bytecode omzet in machinecode. Dit wil ook zeggen dat deze  
+Interpreted apps maken gebruik van een tussenliggende taal en vertalen deze in platformcode at runtime. Het is vergelijkbaar met de Java VM die Java bytecode omzet in machinecode. Het onmiddellijke nadeel van deze werkwijze is dat de runtime-omgeving aan boord moet zijn van de applicatie, wat de applicatie vaak overbodig zwaar maakt.
 
+De performantie van interpreted apps is sterk afhankelijk van de gebruikte tussentaal en interpreter maar is doorgaans beter dan web of hybrid apps.
+
+Omdat de interpreted apps at runtime vertaald worden, kunnen ze gebruik maken van native UI elementen en zullen interpreted apps een vertrouwde look \& feel kunnen aanbieden. 
+
+Interpreted apps kunnen verspreid worden via app stores omdat ze --- net als hybride apps --- verpakt worden als native apps. 
+ 
 Cross-Platform Tools die deze architectuur omarmen zijn onder andere Appcelerator Titanium, Rhodes, \ldots
 
 \subsection{Cross-compiled apps}
 
-Cross-compiled apps kunnen tijdens het compileren meteen vertaald worden naar platform specifieke code en maken geen gebruik van een tussenliggende taal. Het resultaat is native app die
+Cross-compiled apps kunnen tijdens het compileren meteen vertaald worden naar platform-specifieke code en maken dus geen gebruik van een tussenliggende taal. 
 
-Een Cross-Platform Tool die dit schema aanbiedt, is Xamarin.
+De performantie is afhankelijk van de gebruikte cross-compiler maar doorgaans gelijkaardig aan de performantie van native apps. Ook de native UI elementen kunnen gebruikt worden waardoor de applicatie een vertrouwde look \& feel heeft.
+
+Xamarin is een Cross-Platform Tool die deze werkwijze hanteert.
 
 \section{Vergelijkingscriteria}
 
