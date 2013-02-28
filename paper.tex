@@ -1,17 +1,18 @@
-\documentclass[a4paper,conference]{IEEEconf}
+\documentclass[a4paper]{IEEEconf}
 
-\usepackage{color}
-\usepackage{xcolor}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{color}
+\usepackage{xcolor}
 \usepackage[dutch]{babel}
-\usepackage[style=ieee]{biblatex}
+\usepackage[backend=biber,style=ieee]{biblatex}
 \addbibresource{references.bib}
 \usepackage{url}
 \usepackage{hyperref}
 
-\newcommand{\anotherFramework}{\textcolor{red}{another framework}}
-\newcommand{\TODO}{\textcolor{red}{TODO}}
+\newcommand{\anotherCPT}{\textcolor{red}{another Cross-Platform Tool}}
+\newcommand{\TODO}[1]{\textcolor{red}{TODO #1}}
 
 \begin{document}
 \title{Een vergelijkende studie van cross-platform tools voor het ontwikkelen van mobiele applicaties}
@@ -27,7 +28,7 @@
 
 \begin{abstract}
 % Abstract should be 150 words or less.
-Het ontwikkelen van mobiele applicaties voor meerdere platformen is een tijdrovende en dure bezigheid. Omwille van deze reden zoeken meer en meer bedrijven hun toevlucht in Cross-Platform Tools (CPT's) voor het ontwikkelen van mobiele applicaties (apps). In opdracht van CapGemini maakt dit artikel een nauwkeurige vergelijking van twee dergelijke tools: Apache Cordova en \anotherFramework. De beschouwde platformen zijn Android en iOS.
+Het ontwikkelen van mobiele applicaties voor meerdere platformen is een tijdrovende en dure bezigheid. Omwille van deze reden zoeken meer en meer bedrijven hun toevlucht in Cross-Platform Tools (CPT's) voor het ontwikkelen van mobiele applicaties (apps). In opdracht van CapGemini maakt dit artikel een nauwkeurige vergelijking van twee dergelijke tools: Apache Cordova en \anotherCPT. De beschouwde platformen zijn Android en iOS.
 \end{abstract}
 
 \section{Inleiding}
@@ -98,13 +99,28 @@ De performantie is afhankelijk van de gebruikte cross-compiler maar doorgaans ge
 
 Xamarin is een Cross-Platform Tool die deze werkwijze hanteert.
 
-\section{Vergelijkingscriteria}
+\section{Opzet}
 
-\section{Vergelijking}
+Dit onderzoek wordt gevoerd in opdracht van consultingbedrijf CapGemini en dus ligt de focus op applicaties voor de bedrijfswereld. De vergelijking verloopt aan de hand van een aantal criteria en bevindingen bij het ontwikkelen van een Proof-of-Concept (PoC) applicatie. Deze PoC applicatie bundelt een aantal typische eisen van klant zoals bijvoorbeeld specifieke UI vereisten. De vergelijkingscriteria volgen uit eerder onderzoek door VisionMobile \cite{VM_CPT:2012} en interviews met een werknemers van CapGemini in verschillende functies (ontwikkelaar, architect en verkoper) en zijn in volgorde van afnemende belangrijkheid:
+
+\begin{description}
+    \item[Productiviteit] Time-to-market is zeer belangrijk en als gevolg dus ook de productiviteit van de tool. De productiviteit wordt gemeten aan de hand van de tijd die nodig is om de PoC te implementeren. 
+    \item[Aanpasbaarheid van de UI] Uit interviews is gebleken dat klanten vaak erg specifieke eisen hebben met betrekking tot de user interface. Het is dan ook belangrijk dat deze (volledig) aanpasbaar is. De aanpasbaarheid van de UI wordt gemeten aan de hand van de specifieke vereisten die opgelegd zijn voor de PoC.
+    \item[Leercurve] Dit criterium omvat de ervaring van de ontwikkelaar en het vertrouwd geraken met de (nieuwe) tool omdat beide met elkaar verband houden. Wanneer een ontwikkelaar bijvoorbeeld reeds vertrouwd is met de taal die door de tool gebruikt wordt, zal de leercurve minder hoog zijn. \TODO{het beoordelen van de leercurve is super subjectief, maak daarom een relatieve vergelijking op basis van eigen ervaring}
+    \item[Kost] Dit is het totale kostenplaatje voor het ontwikkelen van een applicatie en wordt dan ook op basis van deze cijfers gemeten.
+    \item[Performantie] De verschillende werkwijzen kunnen de performantie van de applicatie sterk beïnvloeden. De performantie eisen voor de gemiddelde business app zijn doorgaans zwakker dan voor bijvoorbeeld games. In dat opzicht is performantie minder belangrijk. \TODO{Objectiveer performantie}
+    \item[Ondersteunde platformen] Bij de start van het onderzoek, is de focus op Android en iOS gelegd. Ondersteuning voor extra platformen is een pluspunt maar geen vereiste. De toegekende score is de som van het marktaandeel per ondersteund platform.  
+\end{description}
+
+\section{De kandidaten}
 
 \subsection{Apache Cordova}
 
-\subsection{Rhodes}
+Apache Cordova, beter gekend als PhoneGap, is een CPT die toelaat hybride applicaties te ontwikkelen voor Android, iOS, Windows Phone, Bada, 
+
+\subsection{\anotherCPT}
+
+\section{Vergelijking}
 
 \section{Besluit}
 
